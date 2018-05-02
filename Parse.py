@@ -11,7 +11,10 @@ def backup_list(backupthis=''):
     write = ''
     for line in backupthis:
         write = write + line + '\n'
-    open('CheckedAlready.txt', 'w').write(write)
+    #open the file, write to it, close it
+    file = open('CheckedAlready.txt', 'w')
+    file.write(write)
+    file.close()
 
 #define a function that just keeps checking the new queue every 
 #5 minutes and sends a notification if there is a new gloomhaven
